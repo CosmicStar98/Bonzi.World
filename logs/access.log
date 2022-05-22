@@ -35,3 +35,15 @@
 {"guid":"b0bd5060c0df6d45","ip":"::ffff:172.18.0.1","level":"info","message":"connect"}
 {"guid":"7daba78a198298e4","ip":"::ffff:172.18.0.1","level":"info","message":"connect"}
 {"guid":"e0a6fa0f2dfcf70f","ip":"::ffff:172.18.0.1","level":"info","message":"connect"}
+{"guid":"d0e862dad9584528","ip":"::ffff:172.18.0.1","level":"info","message":"connect"}
+{"guid":"d1353ec607fabe54","ip":"::ffff:172.18.0.1","level":"info","message":"connect"}
+{"guid":"b0bd5060c0df6d45","ip":"::ffff:172.18.0.1","level":"info","message":"disconnect"}
+{"guid":"239006347738fbf7","ip":"::ffff:172.18.0.1","level":"info","message":"connect"}
+{"guid":"239006347738fbf7","ip":"::ffff:172.18.0.1","level":"info","message":"disconnect"}
+{"guid":"00ba774687040fe2","ip":"::ffff:172.18.0.1","level":"info","message":"connect"}
+{"guid":"00ba774687040fe2","ip":"::ffff:172.18.0.1","level":"info","message":"disconnect"}
+{"guid":"4b40e4f258c1cebd","ip":"::ffff:172.18.0.1","level":"info","message":"connect"}
+{"guid":"4b40e4f258c1cebd","ip":"::ffff:172.18.0.1","level":"info","message":"disconnect"}
+{"guid":"cd6edf754444b28d","ip":"::ffff:172.18.0.1","level":"info","message":"connect"}
+{"guid":"a58be5e7028298f2","ip":"::ffff:172.18.0.1","level":"info","message":"connect"}
+{"guid":"e48197e088b019ec","ip":"::ffff:172.18.0.1","level":"info","message":"connect"}
