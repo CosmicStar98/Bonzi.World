@@ -436,7 +436,6 @@ let userCommands = {
         if (Object.keys(stickers).includes(sticker)) {
             this.room.emit("talk", {
                 text: ` - <img src="./img/stickers/${sticker}.png" width=170>`,
-                say: stickers[sticker],
                 guid: this.guid,
             });
         }

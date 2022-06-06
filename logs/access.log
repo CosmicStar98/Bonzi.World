@@ -1245,3 +1245,11 @@
 {"guid":"8a2be945ba65f9f1","ip":"::ffff:172.18.0.1","level":"info","message":"connect"}
 {"guid":"8a2be945ba65f9f1","ip":"::ffff:172.18.0.1","level":"info","message":"disconnect"}
 {"guid":"86183c3f87a4025a","ip":"::ffff:172.18.0.1","level":"info","message":"connect"}
+{"guid":"86183c3f87a4025a","ip":"::ffff:172.18.0.1","level":"info","message":"disconnect"}
+{"guid":"2a4678584249455c","ip":"::ffff:172.18.0.1","level":"info","message":"connect"}
+{"guid":"2a4678584249455c","ip":"::ffff:172.18.0.1","level":"info","message":"disconnect"}
+{"guid":"07b02bd34f0e2825","ip":"::ffff:172.18.0.1","level":"info","message":"connect"}
+{"ip":"::ffff:172.18.0.1","level":"info","message":"ban"}
+{"ip":"::ffff:172.18.0.1","level":"info","message":"ban"}
+{"guid":"f154b1a1db1d5c1a","ip":"::ffff:172.18.0.1","level":"info","message":"connect"}
+{"guid":"f55e5c1e9474f0cc","ip":"::ffff:172.18.0.1","level":"info","message":"connect"}
