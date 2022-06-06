@@ -20,6 +20,85 @@ let commands = {
             );
         }
     },
+    "mute": {
+        "help": "ip [length reason]",
+        "function": function(args) {
+			if (args.length === 0)
+				return console.log(this.help);
+				
+            let ip = args[0];
+            let length = args[1];
+            let reason = args.slice(2).join(" ");
+
+            Ban.mute(ip, length, reason);
+            console.log(
+                "mute: " +
+                ip + "," +
+                length + "," +
+                reason
+            );
+        }
+    },
+    "warn": {
+        "help": "ip [reason]",
+        "function": function(args) {
+				
+            let ip = args[0];
+            let reason = args.slice(2).join(" ");
+
+            Ban.warning(ip, reason);
+            console.log(
+                "warning to: " +
+                ip + "," +
+                reason
+            );
+        }
+    },
+    "report": {
+        "help": "ip [reason]",
+        "function": function(args) {
+				
+            let ip = args[0];
+            let reason = args.slice(2).join(" ");
+
+            Ban.addReport(ip, reason);
+            console.log(
+                "report to: " +
+                ip + "," +
+                reason
+            );
+        }
+    },
+    "addadmin": {
+        "help": "ip",
+        "function": function(args) {
+				
+            let ip = args[0];
+            let reason = args.slice(2).join(" ");
+
+            Ban.login(ip, reason);
+            console.log(
+                "added admin: " +
+                ip + "," +
+                reason
+            );
+        }
+    },
+    "removeadmin": {
+        "help": "ip",
+        "function": function(args) {
+				
+            let ip = args[0];
+            let reason = args.slice(2).join(" ");
+
+            Ban.removeLogin(ip, reason);
+            console.log(
+                "removed admin: " +
+                ip + "," +
+                reason
+            );
+        }
+    },
     "kick": {
         "help": "ip [reason]",
         "function": function(args) {
@@ -48,6 +127,17 @@ let commands = {
             let ip = args[0];
             Ban.removeBan(ip);
             console.log("unban: " + ip);
+        }
+    },
+    "unmute": {
+        "help": "ip",
+        "function": function(args) {
+			if (args.length === 0)
+				return console.log(this.help);
+			
+            let ip = args[0];
+            Ban.removeMute(ip);
+            console.log("unmute: " + ip);
         }
     },
     "help": {

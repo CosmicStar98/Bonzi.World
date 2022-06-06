@@ -103,7 +103,7 @@
   "CHAT": {
     "CONTROL": {
       "INPUT": {
-        "PLACEHOLDER": "Enter a message"
+        "PLACEHOLDER": "Enter a message or command...."
       },
       "MINIMIZE": {
         "TITLE": "Minimize Log"

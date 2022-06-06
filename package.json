@@ -7,6 +7,7 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "create-react-app": "^5.0.0",
     "dgram": "^1.0.1",
     "express": "^4.16.4",

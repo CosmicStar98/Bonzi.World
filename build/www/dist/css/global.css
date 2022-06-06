@@ -23,7 +23,7 @@
   display: inline-block;
   width: 16px;
   height: 16px;
-  background-image: url("/web/20211225195556im_/https://bonzi.world/flags/sprite-flags-16x16.png");
+  background-image: url("/flags/sprite-flags-16x16.png");
   background-repeat: no-repeat; }
 
 /* line 13, server/public/flags/sprite-flags-16x16.css */
@@ -4155,7 +4155,7 @@
   display: inline-block;
   width: 64px;
   height: 64px;
-  background-image: url("/web/20211225195556im_/https://bonzi.world/flags/sprite-flags-64x64.png");
+  background-image: url("/flags/sprite-flags-64x64.png");
   background-repeat: no-repeat; }
 
 /* line 13, server/public/flags/sprite-flags-64x64.css */

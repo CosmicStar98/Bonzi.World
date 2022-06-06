@@ -31,6 +31,7 @@ try {
 // Load settings into memory
 const settings = require("./settings.json");
 // Setup basic express server
+
 var express = require('express');
 var app = express();
 if (settings.express.serveStatic)
@@ -65,6 +66,66 @@ server.listen(port, function () {
 	);
 });
 app.use(express.static(__dirname + '/public'));
+app.use(( req, res, next ) => {
+    res.setHeader( 'Access-Control-Allow-Origin', '*' );
+    next();
+});
+
+// Handle Bonzi.WORLD API requests
+ app.get('/api/v1/', (req, res) => res.sendStatus('hello world'))
+app.get('/api/v1/rooms/', function(req, res){
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(require('./rooms.json')));
+})
+app.get('/api/v1/identity/user/', function(req, res){
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(require('./user.json')));
+})
+app.get('/api/v1/identity/fingerprint/', function(req, res){
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(require('./fingerprint.json')));
+})
+app.get('/api/v1/session/', function(req, res){
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(require('./session.json')));
+})
+app.get('/api/v1/login/', function(req, res){
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(require('./logins.json')));
+})
+app.get('/api/v1/login/register/', function(req, res){
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(require('./register.json')));
+}) 
+app.get('/api/v1/login/forgot/', function(req, res){
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(require('./forgot.json')));
+})
+app.get('/api/v1/unload/', function(req, res){
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(require('./unload.json')));
+})
+  
+// Patch logins
+app.post( "/api/v2/login/", async ( req, res ) => {
+    try {
+        const user = await User.findByCredentials(
+            req.body.email,
+            req.body.username,
+            req.body.password
+        );
+        const token = await user.generateAuthToken();
+        res.send( {
+            user,
+            token,
+        } );
+    } catch ( e ) {
+        res.status( 400 ).send( {
+            error: "Catch error",
+            e,
+        } );
+    }
+} );
 
 // ========================================================================
 // Banning functions

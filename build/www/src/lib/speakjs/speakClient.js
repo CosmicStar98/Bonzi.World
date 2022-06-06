@@ -1,35 +1,23 @@
-var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
-if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
-{
-  let window = _____WB$wombat$assign$function_____("window");
-  let self = _____WB$wombat$assign$function_____("self");
-  let document = _____WB$wombat$assign$function_____("document");
-  let location = _____WB$wombat$assign$function_____("location");
-  let top = _____WB$wombat$assign$function_____("top");
-  let parent = _____WB$wombat$assign$function_____("parent");
-  let frames = _____WB$wombat$assign$function_____("frames");
-  let opener = _____WB$wombat$assign$function_____("opener");
-
 (function (window, undefined) {
 	// Use the correct document accordingly with window argument
 	var document = window.document;
-
+	
 	// Define a local copy of speak
 	var speak = {};
-
+	
 	// Map over speak in case of overwrite
 	var _speak = window.speak;
-
+	
 	// Runs speak.js in no conflict mode, returning the original 'speak'
 	// variable to its owner. Returns a reference to this speak object.
 	speak.noConflict = function () {
 		window.speak = _speak;
 		return speak;
 	}
-
+	
 	/* Cross-Browser Web Audio API Playback With Chrome And Callbacks */
 	// from http://www.masswerk.at/mespeak/
-
+	
 	// alias the Web Audio API AudioContext-object
 	var aliasedAudioContext = window.AudioContext || window.webkitAudioContext;
 	// ugly user-agent-string sniffing
@@ -40,10 +28,10 @@ if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; re
 		navigator.userAgent.replace(/^.*?\bChrome\/([0-9]+).*$/, '$1'),
 		10
 	) : 0;
-
+	
 	// set up a BufferSource-node
 	var audioContext = new aliasedAudioContext();
-
+	
 	// Web Worker
 	var speakWorker;
 	try {
@@ -52,7 +40,7 @@ if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; re
 	} catch (e) {
 		console.log('speak.js warning: no worker support');
 	}
-
+	
 	speak.play = function (text, args, onended, onstart) {
 		var source = audioContext.createBufferSource();
 
@@ -62,8 +50,8 @@ if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; re
 			if (this.endTimeout) clearTimeout(this.endTimeout);
 		};
 
-		var PROFILE = window._debugSpeak || 0;
-
+		var PROFILE = 1;
+		
 		function startSource(source) {
 			if (source.start) {
 				source.start(0);
@@ -72,7 +60,7 @@ if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; re
 			}
 			if (onstart) onstart(source);
 		}
-
+		
 		function playSound(streamBuffer) {
 			source.connect(audioContext.destination);
 			// since the ended-event isn't generally implemented,
@@ -109,7 +97,7 @@ if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; re
 				startSource(source);
 			}
 		}
-
+		
 		function handleWav(wav) {
 			var startTime = Date.now();
 			var buffer = new ArrayBuffer(wav.length);
@@ -118,7 +106,7 @@ if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; re
 			playSound(buffer);
 			if (PROFILE) console.log('speak.js: wav processing took ' + (Date.now() - startTime).toFixed(2) + ' ms');
 		}
-
+		
 		if (args && args.noWorker) {
 			// Do everything right now. speakGenerator.js must have been loaded.
 			var startTime = Date.now();
@@ -135,16 +123,15 @@ if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; re
 			speakWorker.postMessage({ text: text, args: args });
 		}
 	};
-
+	
 	// Expose speak to the global object
 	window.speak = speak;
 })(window);
 
 
-}
 /*
-     FILE ARCHIVED ON 21:39:43 Dec 24, 2021 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 17:10:02 May 22, 2022.
+     FILE ARCHIVED ON 17:17:38 Feb 21, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 21:13:35 May 22, 2022.
      JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
 
      ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
@@ -152,14 +139,14 @@ if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; re
 */
 /*
 playback timings (ms):
-  captures_list: 1555.161
-  exclusion.robots: 0.148
-  exclusion.robots.policy: 0.136
-  RedisCDXSource: 0.701
-  esindex: 0.009
-  LoadShardBlock: 1531.377 (3)
-  PetaboxLoader3.datanode: 84.239 (4)
-  CDXLines.iter: 20.006 (3)
-  PetaboxLoader3.resolve: 1885.243 (2)
-  load_resource: 546.328
+  captures_list: 100.293
+  exclusion.robots: 0.086
+  exclusion.robots.policy: 0.079
+  RedisCDXSource: 0.726
+  esindex: 0.007
+  LoadShardBlock: 82.057 (3)
+  PetaboxLoader3.datanode: 116.56 (4)
+  CDXLines.iter: 15.327 (3)
+  load_resource: 86.784
+  PetaboxLoader3.resolve: 42.888
 */
