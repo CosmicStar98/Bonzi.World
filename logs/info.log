@@ -499,3 +499,29 @@
 {"level":"info","message":"roomsSaved"}
 {"guid":"f55e5c1e9474f0cc","level":"info","message":"login"}
 {"level":"info","message":"roomsSaved"}
+{"guid":"f55e5c1e9474f0cc","color":"grey","text":"lmao","level":"info","message":"talk"}
+{"guid":"00777f56c831dc1e","level":"info","message":"login"}
+{"level":"info","message":"roomsSaved"}
+{"guid":"45b564763a27bb97","level":"info","message":"login"}
+{"level":"info","message":"roomsSaved"}
+{"guid":"03ddb7aadc22bc37","level":"info","message":"login"}
+{"level":"info","message":"roomsSaved"}
+{"e":{},"thisCtx":{"rid":"Default","locked":false,"prefs":{"char_limit":5000,"name_limit":25,"status_limit":36,"godword":"HA ITS AUTO GENERATED NOW LMAOOO","runlevel":{"godmode":0,"youtube":0,"joke":0,"fact":0,"wtf":0,"toppestjej":0,"image":0,"video":0,"audio":0,"sticker":0,"backflip":0,"earth":0,"grin":0,"clap":0,"praise":0,"sad":0,"think":0,"shrug":0,"ban":3,"unban":3,"kick":3,"color":0,"asshole":0,"triggered":0,"linux":0,"pitch":0,"speed":0,"pawn":0,"bees":0,"vaporwave":0,"unvaporwave":0,"name":0,"status":0,"owo":0,"uwu":0,"sanitize":3,"pope":3},"room_max":30,"owner":"03ddb7aadc22bc37","pitch":{"max":125,"min":15,"default":"random"},"speed":{"max":275,"min":125,"default":"random"},"defaultName":"Anonymous"},"_id":"Default","users":[],"users_count":1,"flags":{"static":true,"active":false,"removed":false,"hidden":false},"settings":{"background":{"enabled":false},"commands":{"youtube":true},"requirements":{"user":false,"subscriber":false}},"icon":"fas fa-door-open","name":"Default","background":"#6d33a0"},"level":"warn","message":"roomLeave"}
+{"guid":"db2b4825586402f4","level":"info","message":"login"}
+{"guid":"4f7c51234591072b","level":"info","message":"login"}
+{"level":"info","message":"roomsSaved"}
+{"e":{},"thisCtx":{"rid":"Default","locked":false,"prefs":{"char_limit":5000,"name_limit":25,"status_limit":36,"godword":"HA ITS AUTO GENERATED NOW LMAOOO","runlevel":{"godmode":0,"youtube":0,"joke":0,"fact":0,"wtf":0,"toppestjej":0,"image":0,"video":0,"audio":0,"sticker":0,"backflip":0,"earth":0,"grin":0,"clap":0,"praise":0,"sad":0,"think":0,"shrug":0,"ban":3,"unban":3,"kick":3,"color":0,"asshole":0,"triggered":0,"linux":0,"pitch":0,"speed":0,"pawn":0,"bees":0,"vaporwave":0,"unvaporwave":0,"name":0,"status":0,"owo":0,"uwu":0,"sanitize":3,"pope":3},"room_max":30,"owner":"4f7c51234591072b","pitch":{"max":125,"min":15,"default":"random"},"speed":{"max":275,"min":125,"default":"random"},"defaultName":"Anonymous"},"_id":"Default","users":[],"users_count":1,"flags":{"static":true,"active":false,"removed":false,"hidden":false},"settings":{"background":{"enabled":false},"commands":{"youtube":true},"requirements":{"user":false,"subscriber":false}},"icon":"fas fa-door-open","name":"Default","background":"#6d33a0"},"level":"warn","message":"roomLeave"}
+{"guid":"441bcac57ad75bf2","level":"info","message":"login"}
+{"guid":"c1d81239cf94113f","level":"info","message":"login"}
+{"guid":"64418a1cbdbb03a6","level":"info","message":"login"}
+{"guid":"64418a1cbdbb03a6","color":"brown","text":"ll","level":"info","message":"talk"}
+{"guid":"321eeaa0b93425e7","level":"info","message":"login"}
+{"level":"info","message":"roomsSaved"}
+{"e":{},"thisCtx":{"rid":"Default","locked":false,"prefs":{"char_limit":5000,"name_limit":25,"status_limit":36,"godword":"HA ITS AUTO GENERATED NOW LMAOOO","runlevel":{"godmode":0,"youtube":0,"joke":0,"fact":0,"wtf":0,"toppestjej":0,"image":0,"video":0,"audio":0,"sticker":0,"backflip":0,"earth":0,"grin":0,"clap":0,"praise":0,"sad":0,"think":0,"shrug":0,"ban":3,"unban":3,"kick":3,"color":0,"asshole":0,"triggered":0,"linux":0,"pitch":0,"speed":0,"pawn":0,"bees":0,"vaporwave":0,"unvaporwave":0,"name":0,"status":0,"owo":0,"uwu":0,"sanitize":3,"pope":3},"room_max":30,"owner":"321eeaa0b93425e7","pitch":{"max":125,"min":15,"default":"random"},"speed":{"max":275,"min":125,"default":"random"},"defaultName":"Anonymous"},"_id":"Default","users":[],"users_count":1,"flags":{"static":true,"active":false,"removed":false,"hidden":false},"settings":{"background":{"enabled":false},"commands":{"youtube":true},"requirements":{"user":false,"subscriber":false}},"icon":"fas fa-door-open","name":"Default","background":"#6d33a0"},"level":"warn","message":"roomLeave"}
+{"guid":"14c47b839c49842d","level":"info","message":"login"}
+{"guid":"14c47b839c49842d","color":"brown","text":".","level":"info","message":"talk"}
+{"guid":"14c47b839c49842d","color":"brown","text":".","level":"info","message":"talk"}
+{"error":null,"level":"info","message":"banSave"}
+{"guid":"14c47b839c49842d","color":"brown","text":".","level":"info","message":"talk"}
+{"e":{},"thisCtx":{"rid":"Default","locked":false,"prefs":{"char_limit":5000,"name_limit":25,"status_limit":36,"godword":"HA ITS AUTO GENERATED NOW LMAOOO","runlevel":{"godmode":0,"youtube":0,"joke":0,"fact":0,"wtf":0,"toppestjej":0,"image":0,"video":0,"audio":0,"sticker":0,"backflip":0,"earth":0,"grin":0,"clap":0,"praise":0,"sad":0,"think":0,"shrug":0,"ban":3,"unban":3,"kick":3,"color":0,"asshole":0,"triggered":0,"linux":0,"pitch":0,"speed":0,"pawn":0,"bees":0,"vaporwave":0,"unvaporwave":0,"name":0,"status":0,"owo":0,"uwu":0,"sanitize":3,"pope":3},"room_max":30,"owner":"321eeaa0b93425e7","pitch":{"max":125,"min":15,"default":"random"},"speed":{"max":275,"min":125,"default":"random"},"defaultName":"Anonymous"},"_id":"Default","users":[],"users_count":1,"flags":{"static":true,"active":false,"removed":false,"hidden":false},"settings":{"background":{"enabled":false},"commands":{"youtube":true},"requirements":{"user":false,"subscriber":false}},"icon":"fas fa-door-open","name":"Default","background":"#6d33a0"},"level":"warn","message":"roomLeave"}
+{"guid":"0991285d17223b97","level":"info","message":"login"}

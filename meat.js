@@ -433,13 +433,20 @@ let userCommands = {
         });
     },
     sticker: function (sticker) {
+            this.room.emit("talk", {
+                text: `- <img src="./img/stickers/${sticker}.png" width=170>`,
+                guid: this.guid,
+            });
+    },
+  // TTS Speaks the html
+  /*  sticker: function (sticker) {
         if (Object.keys(stickers).includes(sticker)) {
             this.room.emit("talk", {
-                text: ` - <img src="./img/stickers/${sticker}.png" width=170>`,
+                text: `- <img src="./img/stickers/${sticker}.png" width=170>`,
                 guid: this.guid,
             });
         }
-    },
+    }, */
     background: function (text) {
         if (typeof text != "string") {
             this.socket.emit("alert", "nice try");
