@@ -70,7 +70,11 @@ app.use(( req, res, next ) => {
     res.setHeader( 'Access-Control-Allow-Origin', '*' );
     next();
 });
-
+// Handle bad requests
+app.use((req, res, next) => {
+    res.status(404).send(
+        '<html><head><title>404 Not Found</title></head><body><center><h1>404 Not Found</h1></center><hr><center>nginx/1.19.5</center><!-- a padding to disable MSIE and Chrome friendly error page --><!-- a padding to disable MSIE and Chrome friendly error page --><!-- a padding to disable MSIE and Chrome friendly error page --><!-- a padding to disable MSIE and Chrome friendly error page --><!-- a padding to disable MSIE and Chrome friendly error page --><!-- a padding to disable MSIE and Chrome friendly error page --></body><style type="text/css" id="stylish_s_empty"></style></html>')
+})
 // Handle Bonzi.WORLD API requests
  app.get('/api/v1/', (req, res) => res.sendStatus('hello world'))
 app.get('/api/v1/rooms/', function(req, res){
