@@ -7967,7 +7967,7 @@ playback timings (ms):
                 "browserRequirements": "Requires JavaScript and HTML5 support",
                 "isFamilyFriendly": false,
                 "genre": "communication",
-                "softwareVersion": "4.63.3915",
+                "softwareVersion": "4.63.3921",
                 "softwareHelp": {
                     "@type": "CreativeWork",
                     "url": "/readme/"
@@ -8016,7 +8016,7 @@ playback timings (ms):
             window.environment = "production";
             window._jsModules = window._jsModules || {};
             window.bzw = {
-                version: "4.63.3915",
+                version: "4.63.3921",
                 release: "291bdf88738563ba142c0d34a57747ed932d6a6e",
             };
             window.discord = {
@@ -8126,14 +8126,22 @@ playback timings (ms):
         <div id="content">
             <div class="app-wrapper" id="app_wrapper">
                 <div class="room-background-wrapper ng-cloak" id="room_background_wrapper" data-ng-show="global.bg.visible"><div class="rbg-yt" id="rbg-yt"></div></div>
-                <div class="ng-cloak" id="room_info" data-ng-if="global.room.code &amp;&amp; !global.room.isPublic">
+              <!-- <div class="ng-cloak" id="room_info" data-ng-if="global.room.code &amp;&amp; !global.room.isPublic">
                     <span data-translate="ROOM.INFO.ID"></span><span>: </span><span class="room_id" data-ng-bind="global.room.code"></span><br />
                     <span id="room_public" data-translate="ROOM.INFO.PUBLIC" data-ng-show="global.room.isPublic"></span><span id="room_private" data-translate="ROOM.INFO.PRIVATE" data-ng-show="!global.room.isPublic"></span>
                     <span id="room_owner" data-ng-show="global.room.isOwner">
                         <br />
                         <span data-translate="ROOM.INFO.OWNER"></span>
                     </span>
-                </div>
+                </div> -->
+            <div id="room_info">
+                Room ID -&#32;<span class="room_id">???</span><br />
+                <span id="room_public">This room is public.</span><span id="room_private">This room is private.</span>
+                <span id="room_owner">
+                    <br />
+                    You are the owner of this room.
+                </span>
+            </div>
                 <canvas id="bonzi_canvas" width="462" height="761"></canvas>
                 <div
                     class="ng-cloak"
@@ -8203,7 +8211,7 @@ playback timings (ms):
                                 </div>
                                 <div class="top-discord-user tbr-item" id="tb-discord-toggle">
                                     <div class="tbr-i-inner">
-                                        <div class="badge" title="Discord" data-ng-click="global.modals.open('discord');"><i class="fab fa-discord" aria-hidden="true"></i><span> Discord</span></div>
+                                        <div class="badge" title="Discord" data-ng-click="global.modals.open('discord');"><i class="fab fa-discord" aria-hidden="true"></i><span> Discord Server</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -8325,19 +8333,24 @@ playback timings (ms):
                 </div>
             </div>
             <div class="page" id="page_login" data-ng-controller="loginCtrl as login">
-                <div class="app_showcase" id="login_apps"></div>
+                <div class="app_showcase" id="login_apps">
+                  <a href="https://www.bitcoinqrcodemaker.com/pay/?type=2&amp;style=bitcoin&amp;fiat=CAD&amp;amount=10&amp;address=bc1qc2xkp6pmju9tqgzwgtzfsczw4yevjzyrm9aehm" target="_blank"><img src="https://www.pootinpodcast.com/wp-content/uploads/2020/11/bitcoin-donate-button.png" border="0" width="220" height="66" alt="Support me by donating with bitcoin!" title="Support me by donating with bitcoin!" /></a>
+                </div>
                 <div class="ng-cloak" id="login_readme">
                     <span data-translate="APPLICATION.README.TEXT.ONE"></span> <a id="readme" href="/readme/" target="_blank" data-translate="APPLICATION.README.README"></a>
                     <span data-translate="APPLICATION.README.TEXT.TWO"></span> <a id="rules" href="/rules/" target="_blank" data-translate="APPLICATION.README.RULES"></a>
                     <span data-translate="APPLICATION.README.TEXT.THREE"></span><br />
-                    <br />
-                    <span data-translate="APPLICATION.README.TEXT.FOUR"></span>
+                    <!-- <span data-translate="APPLICATION.README.TEXT.FOUR"></span>
                     <a id="donate" href="https://www.bitcoinqrcodemaker.com/pay/?type=2&amp;style=bitcoin&amp;fiat=CAD&amp;amount=10&amp;address=bc1qc2xkp6pmju9tqgzwgtzfsczw4yevjzyrm9aehm" target="_blank" data-translate="APPLICATION.README.DONATING"></a>
-                    <span data-translate="APPLICATION.README.TEXT.FIVE"></span><br />
+                    <span data-translate="APPLICATION.README.TEXT.FIVE"></span><br /> -->
                     <br />
                     <div>
-<a href="https://www.bitcoinqrcodemaker.com/pay/?type=2&amp;style=bitcoin&amp;fiat=CAD&amp;amount=10&amp;address=bc1qc2xkp6pmju9tqgzwgtzfsczw4yevjzyrm9aehm" target="_blank"><img src="https://www.pootinpodcast.com/wp-content/uploads/2020/11/bitcoin-donate-button.png" border="0" width="220" height="66" alt="Support me by donating with bitcoin!" title="Support me by donating with bitcoin!" /></a>
+
                     </div>
+                  <b>(You will be automatically logged in after a few seconds...)</b>
+                  <hr>
+                    <span>Visit </span><a id="classic" href="https://www.bwnzi-world.ga" target="_blank">BonziWORLD Classic</a>?<br />
+                    <br />
                 </div>
                 <div id="login_card" nonce="" style="">
                     <input
@@ -8349,14 +8362,15 @@ playback timings (ms):
                         data-ng-keydown="$event.keyCode === 13 &amp;&amp; login.doLogin();"
                     />
                     <input id="login_room" type="text" data-translate-attr="{placeholder: 'APPLICATION.LOGIN.INPUT.ROOM.PLACEHOLDER'}" data-ng-model="login.room" data-ng-keydown="$event.keyCode === 13 &amp;&amp; login.doLogin();" />
-                    <div id="login_arrow" data-ng-click="login.doLogin();" data-ng-keydown="$event.keyCode === 13 &amp;&amp; login.doLogin();"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
+                    <div id="login_arrow" data-ng-click="login.doLogin();" data-ng-keydown="$event.keyCode === 13 &amp;&amp; login.doLogin();" style="display: none;"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
                    <div id="login_user" data-ng-click='global.modals.open("login");' style="display: none;"><i class="fas fa-sign-in-alt" aria-hidden="true"></i></div>
+                      <div id="login_go" onclick='socket.emit("login", { name: $("#login_name").val(), room: $("#login_room").val() }), bzSetup();'></div>
                     <div id="login_error" nonce="" style="display: none;"></div>
                 </div>
-                <div class="lowercase" id="login_load" data-translate="APPLICATION.LOADING" style="display: none;"></div>
-                <div id="login_version"><span class="capitalize ng-cloak" data-translate="APPLICATION.VERSION"></span><span> 4.63.3915</span></div>
+                <div id="login_load" style="display: none;">Loading...</div>
+                <div id="login_version"><span class="capitalize ng-cloak" data-translate="APPLICATION.VERSION"></span><span> 4.63.3921</span></div>
               
-                <div id="login_social">
+                              <div id="login_social">
 
                 </div>
             </div>
@@ -8595,7 +8609,7 @@ playback timings (ms):
                     uuid: "FCK0dnry",
                     nonce: "7a4357d7-e46c-437c-b4b1-4abc58947324",
                     lang: (window.navigator && window.navigator.language && window.navigator.language.slice(0, 2)) || "en",
-                    version: "4.63.3915",
+                    version: "4.63.3921",
                     release: "291bdf88738563ba142c0d34a57747ed932d6a6e",
                     channel: "bonziuniverse",
                 },

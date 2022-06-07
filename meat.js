@@ -500,7 +500,7 @@ let userCommands = {
         this.socket.emit("vaporwave");
         this.room.emit("youtube", {
             guid: this.guid,
-            vid: "_4gl-FX2RvI"
+            vid: "_HJ9LdmppYU"
         });
     },
     "unvaporwave": function() {
