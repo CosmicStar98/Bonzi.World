@@ -70,14 +70,11 @@ app.use(( req, res, next ) => {
     res.setHeader( 'Access-Control-Allow-Origin', '*' );
     next();
 });
-// Handle bad requests
-app.use((req, res, next) => {
-    res.status(404).send(
-        '<html><head><title>404 Not Found</title></head><body><center><h1>404 Not Found</h1></center><hr><center>nginx/1.19.5</center><!-- a padding to disable MSIE and Chrome friendly error page --><!-- a padding to disable MSIE and Chrome friendly error page --><!-- a padding to disable MSIE and Chrome friendly error page --><!-- a padding to disable MSIE and Chrome friendly error page --><!-- a padding to disable MSIE and Chrome friendly error page --><!-- a padding to disable MSIE and Chrome friendly error page --></body><style type="text/css" id="stylish_s_empty"></style></html>')
-})
+
+
 // Handle Bonzi.WORLD API requests
- app.get('/api/v1/', (req, res) => res.sendStatus('hello world'))
-app.get('/api/v1/rooms/', function(req, res){
+ /*app.get('/api/v1/', (req, res) => res.sendStatus('hello world'))
+app.get('/api/v1/rooms/',  function(req, res){
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify(require('./rooms.json')));
 })
@@ -108,8 +105,80 @@ app.get('/api/v1/login/forgot/', function(req, res){
 app.get('/api/v1/unload/', function(req, res){
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify(require('./unload.json')));
+}) */
+app.use(express.json());
+const ejs = require('ejs');
+const bcrypt = require('bcrypt');
+const db = require('./db');
+const jwt = require('jsonwebtoken');
+
+app.get('/api/v1/', async (req, res) => res.sendStatus('hello world'))
+app.get('/api/v1/rooms/',  async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(require('./rooms.json')));
 })
-  
+app.post('/api/v1/rooms/',  async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(require('./rooms.json')));
+})
+app.get('/api/v1/identity/user/', async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(require('./user.json')));
+})
+app.post('/api/v1/identity/user/', async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(require('./user.json')));
+})
+app.get('/api/v1/identity/fingerprint/', async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(require('./fingerprint.json')));
+})
+app.post('/api/v1/identity/fingerprint/', async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(require('./fingerprint.json')));
+})
+app.get('/api/v1/session/', async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(require('./session.json')));
+})
+app.post('/api/v1/session/', async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(require('./session.json')));
+})
+app.get('/api/v1/login/', async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(require('./logins.json')));
+})
+app.post('/api/v1/login/', async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(require('./logins.json')));
+})
+app.get('/api/v1/login/register/', async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(require('./register.json')));
+}) 
+app.post('/api/v1/login/register/', async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(require('./register.json')));
+}) 
+app.get('/api/v1/login/forgot/', async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(require('./forgot.json')));
+})
+app.post('/api/v1/login/forgot/', async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(require('./forgot.json')));
+})
+app.get('/api/v1/unload/', async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(require('./unload.json')));
+})
+app.post('/api/v1/unload/', async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(require('./unload.json')));
+})
+
+
 // Patch logins
 app.post( "/api/v2/login/", async ( req, res ) => {
     try {
