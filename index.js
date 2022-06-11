@@ -35,7 +35,7 @@ const settings = require("./settings.json");
 
 // Maintenance Configs
 // Options: true and false
-updating = true;
+updating = false;
 
 if (updating == true) {
 var express = require('express');
