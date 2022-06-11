@@ -30,13 +30,26 @@ try {
 
 // Load settings into memory
 const settings = require("./settings.json");
+
 // Setup basic express server
 
+// Maintenance Configs
+// Options: true and false
+updating = true;
+
+if (updating == true) {
+var express = require('express');
+var app = express();
+if (settings.express.serveStatic)
+	app.use(express.static('./build/maintenance/themes/win_xp'));
+var server = require('http').createServer(app);
+} else {
 var express = require('express');
 var app = express();
 if (settings.express.serveStatic)
 	app.use(express.static('./build/www'));
 var server = require('http').createServer(app);
+};
 
 // Init socket.io
 var io = require('socket.io')(server);
@@ -107,10 +120,6 @@ app.get('/api/v1/unload/', function(req, res){
     res.end(JSON.stringify(require('./unload.json')));
 }) */
 app.use(express.json());
-const ejs = require('ejs');
-const bcrypt = require('bcrypt');
-const db = require('./db');
-const jwt = require('jsonwebtoken');
 
 app.get('/api/v1/', async (req, res) => res.sendStatus('hello world'))
 app.get('/api/v1/rooms/',  async (req, res) => {
